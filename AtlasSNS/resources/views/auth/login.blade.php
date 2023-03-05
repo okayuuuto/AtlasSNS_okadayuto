@@ -6,6 +6,7 @@
 
 <p>AtlasSNSへようこそ</p>
 
+@csrf
 {{ Form::label('e-mail') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
 {{ Form::label('password') }}

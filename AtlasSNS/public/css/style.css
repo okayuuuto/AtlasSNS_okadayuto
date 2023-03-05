@@ -1,22 +1,121 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+html {}
+
+body {}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+#head {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px 20px 20px;
+    align-items: center;
+}
+
+#middle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* アコーディオンメニュー */
+.menu {
+    position: absolute;
+    top: 114px;
+    width: 20%;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    transform: translateY(-30px);
+    border: 2px solid;
+    border-color: darkblue;
+    margin-left: 70px;
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+}
+
+.menu ul li a {
+    display: block;
+    color: gray;
+    padding: 35px 0;
+    font-size: 20px;
+}
+
+.menu ul li:nth-of-type(2) {
+    background-color: darkblue;
+    color: #fff;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.blue {
+    color: #fff;
+}
+
+.menu.is-open {
+    opacity: 1;
+    margin-left: 58px;
+}
+
+.accordion-title {
+    cursor: pointer;
+    position: relative;
+    right: 20px;
+    top: -5px;
+    padding: 8px 8px 8px 8px;
+    transition: all 0.2s ease-in-out;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    transform: rotate(135deg);
+}
+
+.accordion-title.open {
+    transform: rotate(-45deg);
+    top: 3.5%;
+}
+
+.top {
+    display: flex;
+    height: 40px;
+}
+
+.users {
+    color: #fff;
+    font-size: 18px;
+    text-align: left;
+    width: 200px;
+}
+
+.icon {
+    width: 70%;
 }
