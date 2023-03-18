@@ -1,10 +1,94 @@
 @charset "UTF-8";
 
-html{
+html {
     height: 100%;
 }
 
-body{
+body {
+    width: 100%;
     height: 100%;
-    background: #186AC9;
+    background: linear-gradient(to bottom, #0066ff, #75a9ff 50%, #ffcc00);
+}
+
+header {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: center;
+    font-size: 35px;
+    padding: 50px 0 0;
+}
+
+#container {
+    width: 300px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+    border-radius: 20px;
+    font-size: 18px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.atlas {
+    height: 50px;
+}
+
+.form p {
+    text-align: left;
+    padding: 20px 30px 5px 25px;
+    font-size: 15px;
+}
+
+.input {
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    line-height: 2.5;
+}
+
+.button {
+    display: block;
+    width: 80px;
+    margin: 0 0 0 auto;
+    padding: 20px 65px 40px;
+}
+
+.submit {
+    margin: 0 0 0 auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0066;
+    color: #fff;
+    padding: 10px 10px;
+    width: 120px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.register {
+    font-size: 15px;
+}
+
+.added_title {
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+.added_content {
+    font-size: 16px;
+    padding: 40px 0 30px;
+    line-height: 1.2;
+}
+
+.back_button {
+    margin: 0 0 0 auto;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0066;
+    color: #fff;
+    padding: 10px 10px;
+    cursor: pointer;
+    font-size: 16px;
 }

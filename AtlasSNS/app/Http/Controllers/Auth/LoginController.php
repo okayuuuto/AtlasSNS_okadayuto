@@ -51,4 +51,10 @@ class LoginController extends Controller
         }
         return view("auth.login");
     }
+
+    // ログアウト処理
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('login');
+    }
 }
