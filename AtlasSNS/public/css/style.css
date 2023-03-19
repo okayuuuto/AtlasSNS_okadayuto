@@ -119,3 +119,23 @@ header {
 .icon {
     width: 70%;
 }
+
+/* サイドバー */
+
+#confirm {
+    padding: 20px;
+}
+
+#confirm .btn {}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #186AC9;
+
+}
+
+.btn a {
+    color: #fff;
+    font-size: 15px;
+}
