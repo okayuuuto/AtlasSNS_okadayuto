@@ -17,11 +17,11 @@ header {
 
 #container {
     flex: 0 0 80%;
+    border-right: 1px solid #727272;
 }
 
 #side-bar {
     flex: 0 0 20%;
-    border-left: 1px solid #727272;
     z-index: 1;
 }
 
@@ -179,4 +179,36 @@ header {
 .search_btn a {
     color: #fff;
     text-decoration: none;
+}
+
+/* 投稿フォーム */
+
+.post_form {
+    display: flex;
+    padding: 30px 80px 0;
+    border-bottom: 7px solid #d3d3d3;
+}
+
+.post_form img {
+    width: 50px;
+    height: fit-content;
+}
+
+.form_control {
+    width: 80%;
+    height: fit-content;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: none;
+}
+
+.form_control::placeholder {
+    color: #d3d3d3;
+}
+
+.post_btn {
+    width: 100px;
+    margin-top: 30px;
+    margin-right: 70px;
+    display: flex;
 }
