@@ -4,13 +4,20 @@
 
 {!! Form::open() !!}
 
-<p>AtlasSNSへようこそ</p>
+<p>AtlasSNSへようこそ</p><br>
+
+@error('email')
+<span role="alert">
+  <strong>{{ $message }}</strong>
+</span>
+@enderror
 
 @csrf
 <!-- {{ Form::label('mail address') }} -->
 <div class="form">
 <p>mail address</p>
 {{ Form::text('mail',null,['class' => 'input']) }}
+
 <!-- {{ Form::label('password') }} -->
 <p>password</p>
 {{ Form::password('password',['class' => 'input']) }}

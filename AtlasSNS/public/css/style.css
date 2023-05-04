@@ -212,3 +212,8 @@ header {
     margin-right: 70px;
     display: flex;
 }
+
+.post_list {
+    margin-top: 20px;
+    margin-left: 180px;
+}

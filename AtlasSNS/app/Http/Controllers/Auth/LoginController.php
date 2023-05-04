@@ -48,6 +48,8 @@ class LoginController extends Controller
             if(Auth::attempt($data)){
                 return redirect('/top');
             }
+
+            return redirect()->back()->withInput($request->only('email','remember'))->withErrors(['email' => __('auth.failed'),]);
         }
         return view("auth.login");
     }
