@@ -213,7 +213,26 @@ header {
     display: flex;
 }
 
-.post_list {
-    margin-top: 20px;
-    margin-left: 180px;
+.post_content {
+    display: flex;
+    padding: 20px 20px 20px 110px;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.post_content img {
+    width: 50px;
+    height: fit-content;
+    margin-right: 20px;
+}
+
+.post_date {
+    margin-left: auto;
+    font-size: 12px;
+}
+
+.post_text {
+    width: 500px;
+    margin-top: 10px;
+    font-size: 13px;
+    word-wrap: break-word;
 }

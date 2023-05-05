@@ -6,7 +6,7 @@
 
 <div class="post_form">
   <img src="images/icon1.png">
-  {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form_control', 'placeholder' => '投稿内容を入力してください。']) !!}
+  {!! Form::textarea('newPost', null, ['required', 'class' => 'form_control', 'placeholder' => '投稿内容を入力してください。', 'rows' => 4]) !!}
 
   @if ($errors ->any())
   <div class="alert alert-danger">
@@ -24,14 +24,14 @@
 
 {!! Form::close() !!}
 
-<!-- <table class="table table-hover"> -->
 @foreach ($list as $list)
-<div class="post_list">
+<div class="post_content">
+  <img src="images/icon1.png">
 <ul>
   <li>{{ $list -> user -> username }}</li>
-  <li>{{ $list -> post }}</li>
-  <li>{{ $list -> created_at }}</li>
+  <li class="post_text">{!! nl2br(e($list->post)) !!}</li>
 </ul>
+<div class="post_date">{{ $list -> created_at->format('Y-m-d H:i') }}</div>
 </div>
 @endforeach
 
