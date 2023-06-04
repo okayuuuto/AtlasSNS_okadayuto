@@ -31,7 +31,7 @@
     <li>{{ $list -> user -> username }}</li>
     <li class="post_text">{!! nl2br(e($list->post)) !!}</li>
   </ul>
-  <div class="post_date">{{ $list -> created_at->format('Y-m-d H:i') }}
+  <div class="post_date">{{ $list -> updated_at->format('Y-m-d H:i') }}
   </div>
 </div>
 <div class="edit_btn">
@@ -44,12 +44,21 @@
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <form action="/update" method="post">
-      <textarea name="upPost" class="modal_post"></textarea>
+      <textarea name="upPost" class="modal_post" maxlength="200"></textarea>
       <input type="hidden" name="id" class="modal_id" value="">
-      <input type="submit" value="更新">
+      <input type="image" width="40" height="40" src="images/edit.png" alt="">
       {{ csrf_field() }}
     </form>
-    <a class="js-modal-close" href="">閉じる</a>
+    <!-- モーダル内でのエラーメッセージの表示 -->
+    <!-- @if ($errors ->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif -->
   </div>
 </div>
 

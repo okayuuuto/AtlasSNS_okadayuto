@@ -267,7 +267,7 @@ header {
 }
 
 .modal__bg {
-    background: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.02);
     height: 100vh;
     position: absolute;
     width: 100%;
@@ -275,10 +275,16 @@ header {
 
 .modal__content {
     background: #fff;
+    border-radius: 10px;
     left: 50%;
     padding: 40px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+}
+
+.modal_post {
+    width: 650px;
+    height: 200px;
 }
