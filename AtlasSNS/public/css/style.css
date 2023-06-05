@@ -300,6 +300,12 @@ header {
     border-bottom: 7px solid #d3d3d3;
 }
 
+.search_form p {
+    font-size: 22px;
+    margin-left: 150px;
+    padding: 10px;
+}
+
 .search_form_control {
     width: 30%;
     margin-right: 15px;
