@@ -242,7 +242,7 @@ header {
     padding: 0 20px 20px;
 }
 
-.edit_btn a {
+.edit_btn a.js-modal-open {
     margin-left: auto;
 }
 
@@ -256,6 +256,10 @@ header {
     height: fit-content;
     margin-left: 10px;
     width: 35px
+}
+
+.delete_btn:hover {
+    transform: scale(1.8);
 }
 
 .modal {

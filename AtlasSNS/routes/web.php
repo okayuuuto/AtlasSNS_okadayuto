@@ -46,4 +46,6 @@ Route::post('/create', 'PostsController@create');
 
 Route::post('/update', 'PostsController@update');
 
+Route::get('/post/{id}/delete', 'PostsController@delete');
+
 });

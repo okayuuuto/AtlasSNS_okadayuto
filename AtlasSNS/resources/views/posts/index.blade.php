@@ -36,7 +36,8 @@
 </div>
 <div class="edit_btn">
   <a class="js-modal-open" href="" post="{{ $list->post }}" post_id="{{ $list->id }}"><img class="edit" src="images/edit.png"></a>
-  <img class="delete_btn" src="images/trash.png">
+
+  <a class="delete-modal-open" href="/post/{{$list->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')"><img class="delete_btn" src="images/trash.png" onmouseover="this.src='images/trash-h.png'" onmouseout="this.src='images/trash.png'"></a>
 </div>
 
 <!-- モーダルの中身 -->
