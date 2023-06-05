@@ -213,6 +213,7 @@ header {
     display: flex;
 }
 
+/* 投稿一覧 */
 .post_content {
     display: flex;
     padding: 20px 20px 20px 110px;
@@ -249,7 +250,6 @@ header {
 .edit {
     width: 35px;
     height: fit-content;
-    /* margin-left: auto; */
 }
 
 .delete_btn {
@@ -291,4 +291,34 @@ header {
 .modal_post {
     width: 650px;
     height: 200px;
+}
+
+/* ユーザー検索 */
+.search_form {
+    display: flex;
+    padding: 60px 50px;
+    border-bottom: 7px solid #d3d3d3;
+}
+
+.search_form_control {
+    width: 30%;
+    margin-right: 15px;
+    margin-left: 10px;
+    border: solid 2px gray;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.search_form_control::placeholder {
+    color: #d3d3d3;
+    font-size: 20px;
+    padding: 0 0 0 10px;
+}
+
+.search_icon {
+    width: 45px;
+    height: 45px;
+    margin-right: 70px;
+    display: flex;
+    border-radius: 5px;
 }
