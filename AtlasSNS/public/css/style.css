@@ -328,3 +328,49 @@ header {
     display: flex;
     border-radius: 5px;
 }
+
+.user_list {
+    display: flex;
+    margin: 40px 300px;
+    font-size: 20px;
+}
+
+.user_list p {
+    padding-top: 5px;
+}
+
+.follow_btn {
+    border: none;
+    border-radius: 5px;
+    background-color: deepskyblue;
+    margin-left: auto;
+    height: 30px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.unfollow_btn {
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    margin-left: auto;
+    height: 30px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.follow_btn a {
+    font-size: 13px;
+}
+
+.unfollow_btn a {
+    font-size: 13px;
+}

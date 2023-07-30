@@ -48,4 +48,8 @@ Route::post('/update', 'PostsController@update');
 
 Route::get('/post/{id}/delete', 'PostsController@delete');
 
+Route::post('users/{user}/follow', 'UsersController@follow')->name('follow');
+
+Route::delete('users/{user}/unfollow', 'UsersController@unfollow')->name('unfollow');
+
 });

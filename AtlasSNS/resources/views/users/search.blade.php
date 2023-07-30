@@ -15,11 +15,35 @@
 {!! Form::close() !!}
 
 @foreach ($users as $user)
-<ul>
-  <li></li>
-  <li>{{ $user->username }}</li>
-  <li></li>
-</ul>
+<div class="user_list">
+  <p>{{ $user->username }}</p>
+
+  @if (auth()->user()->isFollowing($user))
+    <form action="{{ route('unfollow', ['user' => $user->id]) }}" method="POST">
+      @csrf
+      @method('DELETE')
+
+      <button type="submit" class="unfollow_btn"><a>フォロー解除</a></button>
+    </form>
+    <!-- <form action="/users/{{ $user->id }}/follow" method="POST">
+      @csrf
+      {{ method_field('DELETE') }}
+
+      <button type="submit" class="unfollow_btn"><a>フォロー解除</a></button>
+    </form> -->
+  @else
+    <form action="{{ route('follow', ['user' => $user->id]) }}" method="POST">
+      @csrf
+
+      <button type="submit" class="follow_btn"><a>フォローする</a></button>
+    </form>
+    <!-- <form action="/users/{{ $user->id }}/unfollow" method="POST">
+      @csrf
+      @method('DELETE')
+      <button type="submit" class="follow_btn"><a>フォローする</a></button>
+    </form> -->
+  @endif
+</div>
 @endforeach
 
 @endsection
