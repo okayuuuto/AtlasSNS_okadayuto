@@ -16,6 +16,8 @@
 
 @foreach ($users as $user)
 <div class="user_list">
+  <div id="icon"><img class="user_icon" src="images/icon2.png">
+  </div>
   <p>{{ $user->username }}</p>
 
   @if (auth()->user()->isFollowing($user))
@@ -23,7 +25,7 @@
       @csrf
       @method('DELETE')
 
-      <button type="submit" class="unfollow_btn"><a>フォロー解除</a></button>
+      <button type="submit" class="unfollow_btn">フォロー解除</button>
     </form>
     <!-- <form action="/users/{{ $user->id }}/follow" method="POST">
       @csrf
@@ -35,7 +37,7 @@
     <form action="{{ route('follow', ['user' => $user->id]) }}" method="POST">
       @csrf
 
-      <button type="submit" class="follow_btn"><a>フォローする</a></button>
+      <button type="submit" class="follow_btn">フォローする</button>
     </form>
     <!-- <form action="/users/{{ $user->id }}/unfollow" method="POST">
       @csrf

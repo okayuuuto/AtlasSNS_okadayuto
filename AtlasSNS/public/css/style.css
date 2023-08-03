@@ -331,12 +331,23 @@ header {
 
 .user_list {
     display: flex;
-    margin: 40px 300px;
+    margin: 40px 250px;
     font-size: 20px;
+    align-items: center;
+}
+
+.user_icon {
+    width: 45px;
+    margin-right: 20px;
 }
 
 .user_list p {
     padding-top: 5px;
+    width: 300px;
+}
+
+.user_list form {
+    padding-left: 50px;
 }
 
 .follow_btn {
@@ -344,13 +355,15 @@ header {
     border-radius: 5px;
     background-color: deepskyblue;
     margin-left: auto;
-    height: 30px;
-    width: 120px;
+    height: 35px;
+    width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .unfollow_btn {
@@ -358,19 +371,24 @@ header {
     border-radius: 5px;
     background-color: red;
     margin-left: auto;
-    height: 30px;
-    width: 120px;
+    height: 35px;
+    width: 130px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
+    font-size: 15px;
+    cursor: pointer;
 }
 
-.follow_btn a {
-    font-size: 13px;
+/* フォロー・フォロワーリスト */
+.list_top {
+    display: flex;
+    padding: 60px 50px;
+    border-bottom: 7px solid #d3d3d3;
 }
 
-.unfollow_btn a {
-    font-size: 13px;
+.list_top p {
+    font-size: 25px;
 }
