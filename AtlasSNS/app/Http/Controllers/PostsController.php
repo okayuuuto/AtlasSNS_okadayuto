@@ -12,7 +12,10 @@ class PostsController extends Controller
 {
     //投稿内容の表示
     public function index(){
-        $list = Post::orderBy('created_at','desc') -> get();
+        // $list = Post::orderBy('created_at','desc') -> get();
+        // return view('posts.index',['list' => $list]);
+        // $list = Auth::user();
+        $list = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest() -> get();
         return view('posts.index',['list' => $list]);
         $list = Auth::user();
     }
@@ -43,15 +46,13 @@ class PostsController extends Controller
     }
 
     public function update(Request $request) {
+        $validator = Validator::make($request->all(), ['upPost' => 'required|max:200',], ['upPost.max' => '投稿は200文字以内で入力してください。',]);
 
-        //ここを有効化するとTOP画面とモーダル内にエラーメッセージが表示される。
-        // $validator = Validator::make($request->all(), ['upPost' => 'required|max:200',], ['upPost.max' => '投稿は200文字以内で入力してください。',]);
-
-        // if($validator->fails()) {
-        //     return redirect('/top')
-        //     ->withErrors($validator)
-        //     ->withInput();
-        // }
+        if($validator->fails()) {
+            return redirect('/top')
+            ->withErrors($validator)
+            ->withInput();
+        }
 
         $id = Auth::user()->id;
     $post = $request->input('upPost');

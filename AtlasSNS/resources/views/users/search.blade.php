@@ -16,7 +16,8 @@
 
 @foreach ($users as $user)
 <div class="user_list">
-  <div id="icon"><img class="user_icon" src="images/icon2.png">
+  <div id="icon">
+  <img class="user_icon" src="{{ asset('storage/images/' . $user->images) }}">
   </div>
   <p>{{ $user->username }}</p>
 
@@ -27,23 +28,12 @@
 
       <button type="submit" class="unfollow_btn">フォロー解除</button>
     </form>
-    <!-- <form action="/users/{{ $user->id }}/follow" method="POST">
-      @csrf
-      {{ method_field('DELETE') }}
-
-      <button type="submit" class="unfollow_btn"><a>フォロー解除</a></button>
-    </form> -->
   @else
     <form action="{{ route('follow', ['user' => $user->id]) }}" method="POST">
       @csrf
 
       <button type="submit" class="follow_btn">フォローする</button>
     </form>
-    <!-- <form action="/users/{{ $user->id }}/unfollow" method="POST">
-      @csrf
-      @method('DELETE')
-      <button type="submit" class="follow_btn"><a>フォローする</a></button>
-    </form> -->
   @endif
 </div>
 @endforeach

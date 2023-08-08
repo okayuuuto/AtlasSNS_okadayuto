@@ -26,7 +26,8 @@
         <h1><a href="/top"><img class ="top" src="images/atlas.png"></a></h1>
             <div id="middle">
                 <p class="users">{{ Auth::user()->username }}　さん</p><span class="accordion-title"></span>
-                <div id="icon"><img class="icon" src="images/icon1.png">
+                <div id="icon">
+                <img class="icon" src="{{ asset('storage/images/' . Auth::user()->images) }}">
                 </div>
             </div>
             <nav class="menu">

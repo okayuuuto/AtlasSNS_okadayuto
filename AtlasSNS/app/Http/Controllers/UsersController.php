@@ -17,29 +17,33 @@ class UsersController extends Controller
     }
 
     //プロフィール更新
-    public function profileupdate(Request $request) {
+    public function profileUpdate(Request $request) {
         $validator = Validator::make($request->all(),[
-            'username' => 'required|min:2|max12',
+            'username' => 'required|min:2|max:12',
             'mail' => ['required', 'min:5', 'max:40', 'email', Rule::unique('users')->ignore(Auth::id())],
-            'newpassword' => 'min:8|maz:20|confirmed|alpha_num',
+            'newpassword' => 'required|min:8|max:20|confirmed|alpha_num',
             'newpassword_confirmation' => 'min:8|max:20|alpha_num',
             'bio' => 'max:150',
-            'iconimage' => 'image',
+            'iconimage' => 'image|nullable|mimes:jpeg,png,bmp,gif,svg',
         ]);
 
         $user = Auth::user();
+
         //画像登録
-        $image = $request->file('iconimage')->store('public/images');
+        if($request->hasFile('iconimage')) {
+            $image = $request->file('iconimage')->store('public/images');
+            $user->images = basename($image);
+        }
+
         $validator->validate();
         $user->update([
             'username' => $request->input('username'),
             'mail' => $request->input('mail'),
             'password' => bcrypt($request->input('newpassword')),
             'bio' => $request->input('bio'),
-            'images' => basename($image),
         ]);
 
-        return redirect('/profile');
+        return redirect('/top');
     }
 
     //ユーザー一覧

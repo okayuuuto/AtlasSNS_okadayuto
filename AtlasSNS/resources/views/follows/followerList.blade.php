@@ -9,8 +9,18 @@
   </div>
 </div>
 
-<div class="post_content">
-  <!-- フォローしているユーザーを取得し、アイコン、ユーザー名、投稿、更新時間を更新時間が新しい順にループで取り出す。 -->
+@foreach ($list as $list)
+<div class="post_wrapper">
+  <div class="post_content">
+    <img src="{{ asset('storage/images/' . $list->user->images) }}">
+    <ul>
+      <li>{{ $list -> user -> username }}</li>
+      <li class="post_text">{!! nl2br(e($list->post)) !!}</li>
+    </ul>
+    <div class="post_date">{{ $list -> updated_at->format('Y-m-d H:i') }}
+    </div>
+  </div>
 </div>
+@endforeach
 
 @endsection

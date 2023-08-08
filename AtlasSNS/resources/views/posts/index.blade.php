@@ -3,20 +3,19 @@
 @section('content')
 
 {!! Form::open(['url' => '/create']) !!}
-
-<div class="post_form">
-  <img src="images/icon1.png">
-  {!! Form::textarea('newPost', null, ['required', 'class' => 'form_control', 'placeholder' => '投稿内容を入力してください。', 'rows' => 4]) !!}
-
-  @if ($errors ->any())
+@if ($errors ->any())
   <div class="alert alert-danger">
     <ul>
-      @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-      @endforeach
+    @foreach($errors->all() as $error)
+    <li>{{ $error }}</li>
+    @endforeach
     </ul>
   </div>
-  @endif
+@endif
+
+<div class="post_form">
+  <img src="{{ asset('storage/images/' . Auth::user()->images) }}">
+  {!! Form::textarea('newPost', null, ['required', 'class' => 'form_control', 'placeholder' => '投稿内容を入力してください。', 'rows' => 4]) !!}
 
   <input type="image" name="submit" img class="post_btn" src="{{asset('images/post.png')}}" alt="送信">
   </input>
@@ -25,8 +24,9 @@
 {!! Form::close() !!}
 
 @foreach ($list as $list)
+<div class="post_wrapper">
 <div class="post_content">
-  <img src="images/icon1.png">
+  <img src="{{ asset('storage/images/' . $list->user->images) }}">
   <ul>
     <li>{{ $list -> user -> username }}</li>
     <li class="post_text">{!! nl2br(e($list->post)) !!}</li>
@@ -34,10 +34,13 @@
   <div class="post_date">{{ $list -> updated_at->format('Y-m-d H:i') }}
   </div>
 </div>
+@if (Auth::user()->id === $list->user_id)
 <div class="edit_btn">
   <a class="js-modal-open" href="" post="{{ $list->post }}" post_id="{{ $list->id }}"><img class="edit" src="images/edit.png"></a>
 
   <a class="delete-modal-open" href="/post/{{$list->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか？')"><img class="delete_btn" src="images/trash.png" onmouseover="this.src='images/trash-h.png'" onmouseout="this.src='images/trash.png'"></a>
+</div>
+@endif
 </div>
 
 <!-- モーダルの中身 -->
@@ -50,16 +53,6 @@
       <input type="image" width="40" height="40" src="images/edit.png" alt="">
       {{ csrf_field() }}
     </form>
-    <!-- モーダル内でのエラーメッセージの表示 -->
-    <!-- @if ($errors ->any())
-  <div class="alert alert-danger">
-    <ul>
-      @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-  @endif -->
   </div>
 </div>
 
