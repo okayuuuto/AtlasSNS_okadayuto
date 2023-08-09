@@ -44,10 +44,12 @@
     <p>bio</p>
     {{ Form::text('bio', Auth::user()->bio, ['class' => 'input']) }}
     </div>
-    <div class="profile_wrapper file_form">
-    {{ Form::label('アイコン画像') }}
-    <p>icon image</p>
+    <div class="profile_wrapper">
+    <p class="image_title">icon image</p>
+    <label class="file_label">
+    <p>ファイルを選択</p>
     {{ Form::file('iconimage',['class' => 'input']) }}
+    </label>
     </div>
     <div class="profile_wrapper">
     {{ Form::submit('更新',['class' =>'submit']) }}

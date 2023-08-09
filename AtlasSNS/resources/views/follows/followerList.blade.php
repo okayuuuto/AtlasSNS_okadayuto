@@ -17,7 +17,7 @@
       <li>{{ $list -> user -> username }}</li>
       <li class="post_text">{!! nl2br(e($list->post)) !!}</li>
     </ul>
-    <div class="post_date">{{ $list -> updated_at->format('Y-m-d H:i') }}
+    <div class="post_date">{{ $list -> created_at->format('Y-m-d H:i') }}
     </div>
   </div>
 </div>

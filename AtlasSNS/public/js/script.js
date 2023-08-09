@@ -30,3 +30,8 @@ $(function () {
     return false;
   });
 });
+
+$('.file_label input').on('change', function () {
+  var file = $(this).prop('files')[0];
+  $(this).closest('.file_label').find('p').text(file.name);
+});
