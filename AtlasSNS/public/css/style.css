@@ -390,12 +390,22 @@ header {
 /* フォロー・フォロワーリスト */
 .list_top {
     display: flex;
-    padding: 60px 50px;
+    padding: 20px 80px 40px 80px;
     border-bottom: 7px solid #d3d3d3;
+    align-items: center;
 }
 
 .list_top p {
-    font-size: 25px;
+    font-size: 23px;
+}
+
+.icon_list {
+    margin-left: 50px;
+}
+
+.icon_list img {
+    width: 50px;
+    height: fit-content;
 }
 
 /* プロフィール編集 */

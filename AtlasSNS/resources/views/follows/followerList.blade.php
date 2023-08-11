@@ -5,7 +5,9 @@
 <div class="list_top">
   <p>Follower List</p>
   <div class="icon_list">
-    <!-- フォローしているユーザーを取得し、アイコンのみをループで表示させる。また、アイコンをそれぞれのユーザーのプロフィールに飛ぶようリンクにする。 -->
+    @foreach ($list as $follower)
+    <img src="{{ asset('storage/images/' . $follower->user->images) }}">
+    @endforeach
   </div>
 </div>
 

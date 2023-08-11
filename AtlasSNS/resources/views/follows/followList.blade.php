@@ -5,7 +5,9 @@
 <div class="list_top">
   <p>Follow List</p>
   <div class="icon_list">
-    <!-- フォローしているユーザーを取得し、アイコンのみをループで表示させる。また、アイコンをそれぞれのユーザーのプロフィールに飛ぶようリンクにする。 -->
+    @foreach ($list as $follow)
+    <img src="{{ asset('storage/images/' . $follow->user->images) }}">
+    @endforeach
   </div>
 </div>
 
@@ -22,6 +24,5 @@
   </div>
 </div>
 @endforeach
-  <!-- フォローしているユーザーを取得し、アイコン、ユーザー名、投稿、更新時間を更新時間が新しい順にループで取り出す。 -->
 
 @endsection
