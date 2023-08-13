@@ -12,9 +12,6 @@ class PostsController extends Controller
 {
     //投稿内容の表示
     public function index(){
-        // $list = Post::orderBy('created_at','desc') -> get();
-        // return view('posts.index',['list' => $list]);
-        // $list = Auth::user();
         $list = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest() -> get();
         return view('posts.index',['list' => $list]);
         $list = Auth::user();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 use App\Follow;
 use Auth;
 use Illuminate\Support\Facades\Validator;
@@ -14,6 +15,13 @@ class UsersController extends Controller
     //プロフィール画面遷移
     public function profile(){
         return view('users.profile');
+    }
+
+    //他ユーザーのプロフィール画面遷移
+    public function followsProfile($id) {
+        $user = User::find($id);
+        $post = Post::query()->where('user_id', $user->id)->get();
+        return view('users.follows_profile',['user' => $user, 'post' => $post]);
     }
 
     //プロフィール更新

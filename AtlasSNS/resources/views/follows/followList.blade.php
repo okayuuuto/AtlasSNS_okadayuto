@@ -6,7 +6,7 @@
   <p>Follow List</p>
   <div class="icon_list">
     @foreach ($list as $follow)
-    <img src="{{ asset('storage/images/' . $follow->user->images) }}">
+    <a href="{{ route('followsProfile', ['id' => $follow->user->id]) }}"><img src="{{ asset('storage/images/' . $follow->user->images) }}"></a>
     @endforeach
   </div>
 </div>

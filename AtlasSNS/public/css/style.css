@@ -114,10 +114,8 @@ header {
 .users {
     color: #fff;
     font-size: 18px;
-    /* text-align: left; */
     text-align: right;
     width: 300px;
-    /* width: 170px; */
     margin-right: 50px;
 }
 
@@ -144,6 +142,7 @@ header {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
+    padding-right: 80px;
 }
 
 .btn {
