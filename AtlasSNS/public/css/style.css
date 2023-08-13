@@ -480,3 +480,38 @@ header {
     height: fit-content;
     cursor: pointer;
 }
+
+/* 他ユーザーのプロフィールページ */
+.profile_top {
+    display: flex;
+    padding: 40px 20px 30px 100px;
+    border-bottom: 7px solid #d3d3d3;
+    align-items: center;
+}
+
+.profile_top img {
+    width: 50px;
+    height: fit-content;
+    margin-right: 20px;
+    margin-bottom: auto;
+}
+
+.profile_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin-bottom: 15px;
+    padding-right: 80px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.profile_content p {
+    width: inherit;
+}
+
+.follows_btn {
+    margin-top: auto;
+    margin-left: auto;
+}

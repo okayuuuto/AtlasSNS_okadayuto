@@ -14,7 +14,8 @@
 @foreach ($list as $list)
 <div class="post_wrapper">
   <div class="post_content">
-    <img src="{{ asset('storage/images/' . $list->user->images) }}">
+    <a href="{{ route('followsProfile', ['id' => $list->user->id]) }}">
+    <img src="{{ asset('storage/images/' . $list->user->images) }}"></a>
     <ul>
       <li>{{ $list -> user -> username }}</li>
       <li class="post_text">{!! nl2br(e($list->post)) !!}</li>
