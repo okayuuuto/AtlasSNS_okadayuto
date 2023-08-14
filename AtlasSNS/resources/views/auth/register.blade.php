@@ -17,16 +17,12 @@
 <h2>新規ユーザー登録</h2>
 
 <div class="form">
-{{ Form::label('ユーザー名') }}
 <p>user name</p>{{ Form::text('username',null,['class' => 'input']) }}
 
-{{ Form::label('メールアドレス') }}
 <p>mail address</p>{{ Form::text('mail',null,['class' => 'input']) }}
 
-{{ Form::label('パスワード') }}
 <p>password</p>{{ Form::password('password',['class' => 'input']) }}
 
-{{ Form::label('パスワード確認') }}
 <p>password confirm</p>{{ Form::password('password_confirmation',['class' => 'input']) }}
 </div>
 

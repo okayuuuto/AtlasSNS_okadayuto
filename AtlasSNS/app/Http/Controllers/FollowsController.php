@@ -11,16 +11,17 @@ class FollowsController extends Controller
 {
     //フォローリスト
     public function followList(){
-        $list = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->latest() -> get();
-        return view('follows.followList',['list' => $list]);
-        $list = Auth::user();
+        $postList = Post::query()->whereIn('user_id', Auth::user()->follows()->pluck('followed_id'))->latest() -> get();
+        $followList = Auth::user()->follows;
+
+        return view('follows.followList',['postList' => $postList, 'followList' => $followList,]);
     }
 
     //フォロワーリスト
     public function followerList(){
-        $list = Post::query()->whereIn('user_id', Auth::user()->followers()->pluck('following_id'))->latest() -> get();
-        return view('follows.followerList',['list' => $list]);
-        $list = Auth::user();
+        $postList = Post::query()->whereIn('user_id', Auth::user()->followers()->pluck('following_id'))->latest() -> get();
+        $followerList = Auth::user()->followers;
+        return view('follows.followerList',['postList' => $postList, 'followerList' => $followerList,]);
     }
 
     //フォロー

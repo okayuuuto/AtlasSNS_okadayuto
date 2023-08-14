@@ -5,13 +5,13 @@
 <div class="list_top">
   <p>Follow List</p>
   <div class="icon_list">
-    @foreach ($list as $follow)
-    <a href="{{ route('followsProfile', ['id' => $follow->user->id]) }}"><img src="{{ asset('storage/images/' . $follow->user->images) }}"></a>
+    @foreach ($followList as $follow)
+    <a href="{{ route('followsProfile', ['id' => $follow->id]) }}"><img src="{{ asset('storage/images/' . $follow->images) }}"></a>
     @endforeach
   </div>
 </div>
 
-@foreach ($list as $list)
+@foreach ($postList as $list)
 <div class="post_wrapper">
   <div class="post_content">
     <a href="{{ route('followsProfile', ['id' => $list->user->id]) }}">
